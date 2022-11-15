@@ -21,7 +21,7 @@ const particles = () => Particles.init({
   selector: ".background",
   color:["#395B64", "#A5C9CA", "#E7F6F2"],
     connectParticles: true,
-    maxParticles: 160,
+    maxParticles: 300,
     responsive: [{
       breakpoint: 768,
       options: {
@@ -38,6 +38,12 @@ const particles = () => Particles.init({
       breakpoint: 1200,
       options: {
         maxParticles: 120
+      }
+    },
+    {
+      breakpoint: 2000,
+      options: {
+        maxParticles: 140
       }
     }]
   });

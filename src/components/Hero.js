@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo} from "react";
+import React, { useState, useEffect} from "react";
 import "./Hero.css";
 
 
@@ -8,8 +8,8 @@ const Hero = () => {
     
     
     
-    const arr = ["a Software Engineer", "a Web Developer", "Sultan Alotaibi"];
     useEffect(() => {
+        const arr = ["a Software Engineer", "a Web Developer", "Sultan Alotaibi"];
         setText(arr[index]);
         fadeIn("name", 300, 0);
         setTimeout(() => {
@@ -17,7 +17,7 @@ const Hero = () => {
         }, 1400);
         fadeOut("name", 300, 1000);
         
-    });
+    },[index]);
 
     
     return(
