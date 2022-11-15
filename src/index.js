@@ -17,7 +17,7 @@ window.onload = () => {
   })
 };
 
-const particles = Particles.init({
+const particles = () => Particles.init({
   selector: ".background",
   color:["#395B64", "#A5C9CA", "#E7F6F2"],
     connectParticles: true,
@@ -41,3 +41,5 @@ const particles = Particles.init({
       }
     }]
   });
+
+particles();
