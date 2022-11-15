@@ -1,0 +1,21 @@
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.67rem;
+    font-size: 1.25rem;
+    padding-bottom: 2rem;
+    max-width: 1200px;
+}
+
+@media screen and  (min-width: 1200px) {
+    .projects-list{
+        margin-inline: auto;
+    }
+}
+
+.projects-list > a {
+    border: #A5C9CA88 solid 0.25rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+}

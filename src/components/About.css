@@ -1,0 +1,26 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e7f6f2db;
+    color: #2C3333;
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.67rem;
+    font-size: 1.2em;
+    margin-block: 2rem;
+    font-weight: bold;
+    color: #069A8E;
+}
+.cta > a {
+    color: #e7f6f2db;
+    background-color: #069A8E;
+    border-radius: 0.67rem;
+    margin-inline: 1rem;
+}
