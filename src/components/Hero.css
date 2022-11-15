@@ -2,17 +2,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vmax;
+    height: 45vmax;
     margin: 0;
     padding: 0;
 }
 
 .blur {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
     align-items: center;
     gap: 1ex;
     background-color: rgba(0,0,0,0.15);
     backdrop-filter: blur(10px);
     width: 100%;
+}
+
+#before {
+    justify-self: end;
+}
+
+.hide {
+    opacity: 0;
 }

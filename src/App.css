@@ -10,7 +10,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 @media screen and (min-width: 768px){
   html {
     font-size: 1.5em;
@@ -47,7 +46,7 @@ section:nth-of-type(2n+1) {
 }
 
 section:nth-of-type(2n){
-  background: #e7f6f2db;
+  background: #e7f6f2;
   color: #2C3333;
 }
 
