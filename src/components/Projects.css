@@ -15,7 +15,7 @@
 }
 
 .projects-list > a {
-    border: #A5C9CA88 solid 0.25rem;
+    border: #A5C9CA solid 0.25rem;
     border-radius: 0.5rem;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }

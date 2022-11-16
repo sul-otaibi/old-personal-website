@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #e7f6f2db;
-    color: #2C3333;
 }
 
 .cta {
@@ -19,7 +17,7 @@
     color: #069A8E;
 }
 .cta > a {
-    color: #e7f6f2db;
+    color: #e7f6f2;
     background-color: #069A8E;
     border-radius: 0.67rem;
     margin-inline: 0.5rem;
