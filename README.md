@@ -1,1 +1,1 @@
-You can view this portfolio [here](URL "https://my-portfolio-sultan.netlify.app/")
+You can view this portfolio on `https://my-portfolio-sultan.netlify.app/`
