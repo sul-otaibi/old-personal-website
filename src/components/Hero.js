@@ -5,20 +5,36 @@ import "./Hero.css";
 const Hero = () => {
     const [text, setText] = useState("");
     const [index, setIndex] = useState(0);
-    
-    
-    
+    const [isLast, setIsLast] = useState(false);
     useEffect(() => {
         const arr = ["a Software Engineer", "a Web Developer", "Sultan Alotaibi"];
+        var wait = 1400;
+        if (index === arr.length - 1){
+            setIsLast(true);
+            wait = 5400;
+        } else {
+            setIsLast(false);
+            wait = 1400;
+        }
+
         setText(arr[index]);
         fadeIn("name", 300, 0);
         setTimeout(() => {
-            index < arr.length - 1 ? setIndex(index + 1) : setIndex(0);
-        }, 1400);
-        fadeOut("name", 300, 1000);
+            if (isLast){
+                setIndex(0);
+            } else {
+                setIndex(index + 1);
+            }
+        }, wait);
         
-    },[index]);
-
+        if (isLast){
+            fadeOut("name", 300, 5000);
+        }
+        else {
+            fadeOut("name", 300, 1000);
+        }
+        
+    },[index, isLast]);
     
     return(
         <section id="home">

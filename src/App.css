@@ -28,6 +28,12 @@ html {
   }
 }
 
+@media screen and (min-width: 2000px){
+  html {
+    font-size: 2.7em;
+  }
+}
+
 html::-webkit-scrollbar {
   display: none;
 }

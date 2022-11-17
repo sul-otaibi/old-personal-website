@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Particles from 'particlesjs';
+import REactGA from "react-ga4";
+
+REactGA.initialize("G-QMX6EHT7TF");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +22,7 @@ window.onload = () => {
 
 const particles = () => Particles.init({
   selector: ".background",
-  color:["#395B64", "#A5C9CA", "#E7F6F2"],
+  color:["#395B64", "#A5C9CA", "#E7F6F2","#000000", "#ffffff"],
     connectParticles: true,
     maxParticles: 300,
     responsive: [{
@@ -35,15 +38,15 @@ const particles = () => Particles.init({
       }
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1370,
       options: {
-        maxParticles: 120
+        maxParticles: 120,
       }
     },
     {
       breakpoint: 2000,
       options: {
-        maxParticles: 140
+        maxParticles: 200
       }
     }]
   });
