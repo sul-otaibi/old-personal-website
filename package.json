@@ -5,11 +5,15 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "framer-motion": "^7.6.7",
     "particlesjs": "^2.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^1.4.1",
-    "react-scripts": "5.0.1"
+    "react-particles": "^2.5.3",
+    "react-scripts": "^5.0.1",
+    "tsparticles": "^2.5.3",
+    "tsparticles-engine": "^2.5.2"
   },
   "scripts": {
     "start": "react-scripts start",

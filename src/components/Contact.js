@@ -4,7 +4,7 @@ import "./Contact.css";
 
 export default function Contact() {
     return(
-        <section id="contact">
+        <section id="contact" className="scroll-snap">
             <h1>MY OTHER PAGES</h1>
             <div className="links-list">
                 <a href="https://www.linkedin.com/in/sul-otaibi/"><FontAwesomeIcon icon={faLinkedin} /></a>

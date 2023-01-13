@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import "./Hero.css";
 
 
-const Hero = () => {
+export default function Hero() {
     const [text, setText] = useState("");
     const [index, setIndex] = useState(0);
     const [isLast, setIsLast] = useState(false);
@@ -37,7 +37,7 @@ const Hero = () => {
     },[index, isLast]);
     
     return(
-        <section id="home">
+        <section id="home" className="scroll-snap">
             <div className="blur">
                 <h1 id="before">Hi, I am</h1>
                 <h1 id="name" className="hide">{text}</h1>
@@ -61,6 +61,3 @@ const fadeOut = (id, duration, delay) => {
         delay: delay,
         fill: "forwards" });
     }
-
-
-export default Hero;
