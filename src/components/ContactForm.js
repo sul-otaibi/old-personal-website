@@ -50,7 +50,7 @@ function submitForm(e) {
     msg: form[2].value,
   });
 
-  fetch("http://127.0.0.1:23353/api/sendmail", {
+  fetch("/api/sendmail", {
     method: "POST",
     headers: { Accept: "application.json", "Content-Type": "application/json" },
     body: data,

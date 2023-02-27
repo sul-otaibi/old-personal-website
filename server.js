@@ -1,12 +1,15 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const serverless = require("serverless-http");
 
 const PORT = 23353;
 const app = express();
 
 app.use(cors());
 app.use(express.json({ strict: false }));
+app.use(express.static(path.join(__dirname, "build")));
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
@@ -37,6 +40,10 @@ app.post("/api/sendmail", (req, res) => {
     if (err) res.sendStatus(500);
     else res.sendStatus(200);
   });
+});
+
+app.get("/", (req, res) => {
+  rse.sendFile("index.html");
 });
 
 app.listen(PORT, () => {
