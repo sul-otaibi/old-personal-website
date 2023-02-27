@@ -1,3 +1,7 @@
+#projects {
+    margin-block: 2rem;
+}
+
 .projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -8,14 +12,29 @@
     max-width: 1200px;
 }
 
-@media screen and  (min-width: 1200px) {
-    .projects-list{
+@media screen and (min-width: 1200px) {
+    .projects-list {
         margin-inline: auto;
     }
 }
 
-.projects-list > a {
-    border: #A5C9CA solid 0.25rem;
+.projects-list>button {
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.67rem;
+    border: #ffffff solid 0.25rem;
     border-radius: 0.5rem;
-    /* backdrop-filter: blur(10px); */
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+    transition: all 100ms ease-in-out;
+}
+
+.projects-list>button:hover {
+    font-weight: bold;
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.projects-list>button:active {
+    transform: scale(0.9);
 }
