@@ -1,3 +1,4 @@
+const process = require("process");
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
@@ -49,3 +50,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
+
+module.exports.handler = serverless(app);
