@@ -1,2 +1,2 @@
 [build]
-  command = "npm install && npm run build && node server.js"
+  command = "npm install && npm run build && node server.js &"
