@@ -55,14 +55,6 @@
 
 const nodemailer = require("nodemailer");
 
-const contactEmail = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.a1,
-    pass: process.env.a2,
-  },
-});
-
 const badRequest = {
   statusCode: 400,
   body: JSON.stringify({ message: 'bad request' })
@@ -73,9 +65,16 @@ const errorPayload = {
 };
 
 
-const handler = async (event, context) => {
+const handler = async (event) => {
   if (event.httpMethod !== 'POST') return badRequest;
   const body = JSON.parse(event.body);
+  const contactEmail = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.a1,
+      pass: process.env.a2,
+    },
+  });
   const mail = {
     from: body.name,
     to: "sul.otaibi@outlook.sa",
