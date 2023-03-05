@@ -16,7 +16,7 @@ const success = {
 };
 
 
-const handler = async (event) => {
+const handler = async (event, context, callback) => {
   if (event.httpMethod !== 'POST') return badRequest;
   const body = JSON.parse(event.body);
   const contactEmail = nodemailer.createTransport({
@@ -41,10 +41,12 @@ const handler = async (event) => {
 <div>Message:<br>
 ${body.msg}</div>`,
   };
+  console.log(mail);
   contactEmail.sendMail(mail, (err) => {
-    if (err) return errorPayload;
+    if (err) callback(err);
+    else console.log(mail);
   })
-  return success;
+  callback(null, success)
 };
 
 module.exports = { handler };
