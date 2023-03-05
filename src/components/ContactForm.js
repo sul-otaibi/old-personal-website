@@ -50,7 +50,7 @@ function submitForm(e) {
     msg: form[2].value,
   });
 
-  fetch("/api/sendmail", {
+  fetch("/.netlify/functions/submit_form", {
     method: "POST",
     headers: { Accept: "application.json", "Content-Type": "application/json" },
     body: data,
