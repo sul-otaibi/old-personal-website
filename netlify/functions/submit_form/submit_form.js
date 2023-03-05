@@ -68,6 +68,10 @@ const badRequest = {
   statusCode: 400,
   body: JSON.stringify({ message: 'bad request' })
 };
+const errorPayload = {
+  statusCode: 500,
+  body: JSON.stringify({ message: 'error in form submission' })
+};
 
 
 const handler = async (event, context) => {
@@ -82,7 +86,9 @@ const handler = async (event, context) => {
 <div>Message:<br>
 ${body.msg}</div>`,
   };
-  console.log(mail);
+  contactEmail.sendMail(mail, (err) => {
+    if (err) return errorPayload;
+  });
   return {
     statusCode: 200,
     body: JSON.stringify({ message: 'hi' })
