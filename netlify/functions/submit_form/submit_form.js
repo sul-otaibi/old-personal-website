@@ -91,9 +91,11 @@ ${body.msg}</div>`,
   };
   contactEmail.sendMail(mail, (err) => {
     if (err) return errorPayload;
-    else console.log(mail);
+    else {
+console.log(mail);
+return {statusCode: 200};
+}
   });
-  return { statusCode: 200 }
 };
 
 module.exports = { handler };
