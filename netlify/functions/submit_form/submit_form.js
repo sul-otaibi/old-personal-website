@@ -1,77 +1,23 @@
-// const process = require("process");
-// const path = require("path");
-// const express = require("express");
-// const cors = require("cors");
-// const nodemailer = require("nodemailer");
-// const serverless = require("serverless-http");
-
-// const PORT = 23353;
-// const app = express();
-
-// app.use(cors());
-// app.use(express.json({ strict: false }));
-// app.use(express.static(path.join(__dirname, "build")));
-
-// const contactEmail = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: process.env.a1,
-//     pass: process.env.a2,
-//   },
-// });
-
-// contactEmail.verify((err) => {
-//   if (err) {
-//     console.error(err);
-//     process.abort();
-//   } else console.log(`ready man!`);
-// });
-
-// app.post("/api/sendmail", (req, res) => {
-//   const mail = {
-//     from: req.body.name,
-//     to: process.env.a3,
-//     subject: `Contact Form [${req.body.name}]`,
-//     html: `<div>FROM: ${req.body.name}</div>
-//     <div>EMAIL: ${req.body.mail}</div>
-//     <div>Message:<br>
-//     ${req.body.msg}</div>`,
-//   };
-//   contactEmail.sendMail(mail, (err) => {
-//     if (err) res.sendStatus(500);
-//     else res.sendStatus(200);
-//   });
-// });
-
-// app.get("/", (req, res) => {
-//   rse.sendFile("index.html");
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`running on port ${PORT}`);
-// });
-
-// module.exports.handler = serverless(app);
-
 const nodemailer = require("nodemailer");
 
 const badRequest = {
   statusCode: 400,
   body: JSON.stringify({ message: 'bad request' })
 };
+
 const errorPayload = {
   statusCode: 500,
   body: JSON.stringify({ message: 'error in form submission' })
 };
 
+const success = {
+  statusCode: 200,
+  body: JSON.stringify({ message: 'OK' })
+};
+
 
 const handler = async (event) => {
   if (event.httpMethod !== 'POST') return badRequest;
-  // ===============================
-  console.log(process.env.a1);
-  console.log(process.env.a2);
-  console.log(process.env.a3);
-  // ===============================
   const body = JSON.parse(event.body);
   const contactEmail = nodemailer.createTransport({
     service: "gmail",
@@ -79,6 +25,12 @@ const handler = async (event) => {
       user: process.env.a1,
       pass: process.env.a2,
     },
+  });
+  contactEmail.verify((err) => {
+    if (err) {
+      console.error(err);
+      process.abort();
+    }
   });
   const mail = {
     from: body.name,
@@ -91,11 +43,8 @@ ${body.msg}</div>`,
   };
   contactEmail.sendMail(mail, (err) => {
     if (err) return errorPayload;
-    else {
-console.log(mail);
-return {statusCode: 200};
-}
-  });
+  })
+  return success;
 };
 
 module.exports = { handler };
