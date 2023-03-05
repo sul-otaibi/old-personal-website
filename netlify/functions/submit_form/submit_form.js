@@ -67,6 +67,11 @@ const errorPayload = {
 
 const handler = async (event) => {
   if (event.httpMethod !== 'POST') return badRequest;
+  // ===============================
+  console.log(process.env.a1);
+  console.log(process.env.a2);
+  console.log(process.env.a3);
+  // ===============================
   const body = JSON.parse(event.body);
   const contactEmail = nodemailer.createTransport({
     service: "gmail",
@@ -86,6 +91,7 @@ ${body.msg}</div>`,
   };
   contactEmail.sendMail(mail, (err) => {
     if (err) return errorPayload;
+    else console.log(mail);
   });
   return { statusCode: 200 }
 };
