@@ -53,7 +53,6 @@
 
 // module.exports.handler = serverless(app);
 
-const process = require("process");
 const nodemailer = require("nodemailer");
 
 const contactEmail = nodemailer.createTransport({
@@ -79,7 +78,7 @@ const handler = async (event, context) => {
   const body = JSON.parse(event.body);
   const mail = {
     from: body.name,
-    to: process.env.a3,
+    to: "sul.otaibi@outlook.sa",
     subject: `Contact Form [${body.name}]`,
     html: `<div>FROM: ${body.name}</div>
 <div>EMAIL: ${body.mail}</div>
@@ -89,10 +88,7 @@ ${body.msg}</div>`,
   contactEmail.sendMail(mail, (err) => {
     if (err) return errorPayload;
   });
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'hi' })
-  }
+  return { statusCode: 200 }
 };
 
 module.exports = { handler };
