@@ -1,25 +1,5 @@
 import "./Projects.css";
 
-const MODAL_WRAPPER_STYLE = {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  background: "white",
-  padding: "1.25rem",
-  borderRadius: "1em",
-  textAlign: "center",
-};
-const MODAL_BG_STYLE = {
-  position: "fixed",
-  top: "0",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  background: "rgba(0,0,0,0.5)",
-  color: "black",
-};
-
 export default function Projects(props) {
   const projects = [
     {
@@ -30,7 +10,8 @@ export default function Projects(props) {
     {
       name: "JATS",
       description:
-        "This is a simple website to help track your job application process.",
+        `This is a simple website to help track your job application process.
+        Live demo is soon to be published.`,
       url: "https://github.com/sul-otaibi/JATS",
     },
   ];
@@ -58,8 +39,8 @@ function openModal(modalRoot, el, close) {
   if (close) return modalRoot.render();
 
   modalRoot.render(
-    <div style={MODAL_BG_STYLE}>
-      <div style={MODAL_WRAPPER_STYLE}>
+    <div className="modal-bg">
+      <div className="modal-wrapper">
         <h1>{el.name}</h1>
         <div>{el.description}</div>
         <br></br>

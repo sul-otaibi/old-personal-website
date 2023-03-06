@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.67rem;
+    gap: 1.25rem;
     font-size: 1.25rem;
     padding-bottom: 2rem;
     max-width: 1200px;
@@ -27,6 +27,9 @@
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(10px);
     transition: all 100ms ease-in-out;
+    min-width: 10rem;
+    min-height: 5rem;
+    cursor: pointer;
 }
 
 .projects-list>button:hover {
@@ -37,4 +40,32 @@
 
 .projects-list>button:active {
     transform: scale(0.9);
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 1.25rem;
+    border-radius: 1em;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .modal-wrapper {
+        box-sizing: border-box;
+        width: 95%;
+    }
 }

@@ -7,13 +7,14 @@
   z-index: 1;
 }
 
-#contact-form > div {
+#contact-form>div {
   margin-block: 1rem;
   margin-inline: auto;
 }
 
-#contact-form > div > input,
+#contact-form>div>input,
 textarea {
+  font: inherit;
   font-size: inherit;
   color: inherit;
   margin: 0.5rem 0 0;
@@ -23,15 +24,15 @@ textarea {
   box-shadow: 0 0 5px black;
   width: 100%;
 }
-#contact-form > div > textarea {
-  font: inherit;
+
+#contact-form>div>textarea {
   resize: vertical;
   width: 100%;
   min-height: 4rem;
   overflow: hidden;
 }
 
-#contact-form > button {
+#contact-form>button {
   display: block;
   margin-inline: auto;
   padding: 0.5rem 1rem;
@@ -56,10 +57,11 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  #contact-form > div {
+  #contact-form>div {
     margin-inline: 0;
   }
-  #contact-form > div > input,
+
+  #contact-form>div>input,
   textarea {
     width: 100%;
   }
