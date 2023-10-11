@@ -3,15 +3,15 @@ import "./ContactForm.css";
 export default function ContactForm() {
   return (
     <>
-      <h1>contact me</h1>
-      <form id="contact-form" onSubmit={submitForm} method="POST">
+      <h1 id="contact">contact me</h1>
+      <form onSubmit={submitForm} method="POST">
         <div>
           <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="John Deo"
+            placeholder="Sultan Alotaibi"
             required
           ></input>
         </div>
@@ -21,7 +21,7 @@ export default function ContactForm() {
             type="email"
             name="Email"
             id="Email"
-            placeholder="example@example.com"
+            placeholder="sul.otaibi@outlook.sa"
             required
           ></input>
         </div>

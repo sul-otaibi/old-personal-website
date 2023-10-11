@@ -1,4 +1,4 @@
-#contact-form {
+form {
   position: relative;
   padding: 1rem;
   margin-inline: auto;
@@ -7,12 +7,12 @@
   z-index: 1;
 }
 
-#contact-form>div {
+form > div {
   margin-block: 1rem;
   margin-inline: auto;
 }
 
-#contact-form>div>input,
+form > div > input,
 textarea {
   font: inherit;
   font-size: inherit;
@@ -25,14 +25,14 @@ textarea {
   width: 100%;
 }
 
-#contact-form>div>textarea {
+form > div > textarea {
   resize: vertical;
   width: 100%;
   min-height: 4rem;
   overflow: hidden;
 }
 
-#contact-form>button {
+form > button {
   display: block;
   margin-inline: auto;
   padding: 0.5rem 1rem;
@@ -57,30 +57,30 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  #contact-form>div {
+  form > div {
     margin-inline: 0;
   }
 
-  #contact-form>div>input,
+  form > div > input,
   textarea {
     width: 100%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  #contact-form {
+  form {
     max-width: 720px;
   }
 }
 
 @media screen and (min-width: 1370px) {
-  #contact-form {
+  form {
     max-width: 1000px;
   }
 }
 
 @media screen and (min-width: 2000px) {
-  #contact-form {
+  form {
     max-width: 1200px;
   }
 }
