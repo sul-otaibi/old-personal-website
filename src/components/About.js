@@ -13,7 +13,7 @@ export default function About() {
       <br></br>
       <p>
         I am confident that I have the ability to learn and apply new skills
-        quickly, as well as to work effectively in a team environment.
+        quickly, as well as to work effectively in a fast paced environment.
       </p>
       <span className="cta">
         <p>I AM AVAILABLE</p>
